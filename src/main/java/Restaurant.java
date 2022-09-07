@@ -65,6 +65,22 @@ public class Restaurant {
 
     }
 
+    //TDD approach, writing this method to make the failed test case pass
+    public int calulatePrice(List<String> selectedItems)
+    {
+        int totalPrice = 0;
+        for(String dishName: selectedItems)
+        {
+            for(Item item: menu)
+            {
+                if(dishName.equals(item.getName()))
+                    totalPrice += item.getPrice();
+            }
+        }
+
+        return totalPrice;
+    }
+
     public String getName() {
         return name;
     }
